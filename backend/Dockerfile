@@ -9,6 +9,7 @@ RUN pip install -r requirements.txt
 WORKDIR /app
 COPY . .
 
+RUN mkdir media
 RUN python3 manage.py makemigrations
 
 CMD /bin/sh -c "python3 manage.py migrate && daphne config.asgi:application -b 0.0.0.0 -p 8000"
