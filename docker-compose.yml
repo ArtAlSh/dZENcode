@@ -1,0 +1,40 @@
+services:
+  frontend:
+    build:
+      context: ./frontend
+    restart: always
+    networks:
+      - app_net
+    ports:
+      - 8080:8080
+  
+  backend:
+    build:
+      context: ./backend
+    restart: always
+    volumes:
+      - ./backend:/app/backend
+    networks:
+      - app_net
+    depends_on:
+      - redis
+      - postgres
+    ports:
+      - 8000:8000
+  
+  redis:
+    image: redis
+    networks:
+      - app_net
+  
+  postgres:
+    image: postgres
+    env_file:
+      - backend/.env
+    networks:
+      - app_net
+    ports:
+      - 5430:5432
+
+networks:
+  app_net:

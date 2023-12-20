@@ -1,0 +1,7 @@
+DEBUG=FALSE
+SECRET_KEY=django-insecure-datzhd06o4v)mu-0gr2$&8jg*k+5(oa13jg-$d*gkvk7ntbc9h
+POSTGRES_USER=postgres
+POSTGRES_DB=chat_db
+POSTGRES_PASSWORD=4321
+EMAIL_HOST_USER=
+EMAIL_HOST_PASSWORD=
