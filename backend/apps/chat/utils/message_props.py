@@ -11,7 +11,7 @@ from .exceptions import MessageException
 
 class HandleUser:
     username_pattern = re.compile(r"^[a-zA-Z0-9_\-]{4,15}$")
-    email_pattern = re.compile(r"\w+@\w+\.+\w{2}")
+    email_pattern = re.compile(r".+@\w+\.+\w{2}")
 
     def __get__(self, instance, owner):
         if user := instance._user:
