@@ -121,6 +121,7 @@ export default {
       return is_valid;
     },
     checkUsername() {
+      if (this.isAuth) return true;
       if (!this.username) {
         this.username_error = "This field is required.";
         return false;
@@ -133,6 +134,7 @@ export default {
       return true;
     },
     checkEmail() {
+      if (this.isAuth) return true;
       if (!this.email) {
         this.email_error = "This field is required.";
         return false;
